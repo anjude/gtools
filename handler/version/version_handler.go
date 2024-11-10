@@ -2,8 +2,8 @@ package version
 
 import (
 	"fmt"
-	"github.com/anjude/terminalx/config"
-	"github.com/anjude/terminalx/handler/base"
+	"github.com/anjude/gtools/config"
+	"github.com/anjude/gtools/handler/base"
 )
 
 var _ base.IHandler = Handler{}

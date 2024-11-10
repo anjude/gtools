@@ -2,7 +2,7 @@ package shutdown
 
 import (
 	"fmt"
-	"github.com/anjude/terminalx/handler/base"
+	"github.com/anjude/gtools/handler/base"
 	"os"
 	"os/exec"
 	"runtime"

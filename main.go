@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/anjude/terminalx/config"
-	"github.com/anjude/terminalx/handler"
+	"github.com/anjude/gtools/config"
+	"github.com/anjude/gtools/handler"
 	"os"
 )
 

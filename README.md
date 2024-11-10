@@ -1,5 +1,5 @@
-### TerminalX
-terminal x，为你的terminal（终端）插上翅膀~
+### GTools
+gtools，为你的terminal（终端）插上翅膀~
 
 ### 1. 简单使用
 1. 准备好golang环境

@@ -3,8 +3,8 @@ package chat
 import (
 	"bufio"
 	"fmt"
-	"github.com/anjude/terminalx/handler/base"
-	"github.com/anjude/terminalx/third_party/chatgpt"
+	"github.com/anjude/gtools/handler/base"
+	"github.com/anjude/gtools/third_party/chatgpt"
 	"github.com/sashabaranov/go-openai"
 	"os"
 )

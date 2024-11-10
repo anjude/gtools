@@ -3,6 +3,7 @@ package config
 import (
 	"fmt"
 	"github.com/spf13/viper"
+	"log"
 	"os/user"
 )
 
@@ -21,12 +22,13 @@ type Config struct {
 
 func InitConfig() error {
 	currentUser, _ := user.Current()
-	configFile := currentUser.HomeDir + "/.terminalx/config.yaml"
+	configFile := currentUser.HomeDir + "/.terminalx1/config.yaml"
 	viper.SetConfigFile(configFile)
 
 	if err := viper.ReadInConfig(); err != nil {
 		fmt.Printf("read config file err: %v\n", err)
-		return err
+		setDefaultConfig()
+		return nil
 	}
 
 	if err := viper.Unmarshal(&BotConf); err != nil {
@@ -34,4 +36,16 @@ func InitConfig() error {
 		return err
 	}
 	return nil
+}
+
+func setDefaultConfig() {
+	log.Printf("use default config")
+	BotConf = Config{
+		ChatGPT: ChatGPTConfig{
+			ApiKey:     "",
+			Proxy:      "",
+			ChatRounds: 3,
+		},
+		Version: "0.0.1",
+	}
 }

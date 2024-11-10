@@ -2,10 +2,10 @@ package handler
 
 import (
 	"fmt"
-	"github.com/anjude/terminalx/handler/base"
-	"github.com/anjude/terminalx/handler/chat"
-	"github.com/anjude/terminalx/handler/shutdown"
-	"github.com/anjude/terminalx/handler/version"
+	"github.com/anjude/gtools/handler/base"
+	"github.com/anjude/gtools/handler/chat"
+	"github.com/anjude/gtools/handler/shutdown"
+	"github.com/anjude/gtools/handler/version"
 )
 
 // OptionMap 在这里维护指令集

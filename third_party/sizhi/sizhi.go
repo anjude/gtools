@@ -3,7 +3,7 @@ package sizhi
 import (
 	"bytes"
 	"encoding/json"
-	"github.com/anjude/terminalx/utils/http_util"
+	"github.com/anjude/gtools/utils/http_util"
 )
 
 type Req struct {
