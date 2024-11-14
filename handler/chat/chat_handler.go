@@ -4,8 +4,8 @@ import (
 	"bufio"
 	"fmt"
 	"github.com/anjude/gtools/handler/base"
-	"github.com/anjude/gtools/third_party/chatgpt"
-	"github.com/sashabaranov/go-openai"
+	"github.com/anjude/gtools/third_party/wenxin"
+	"math/rand"
 	"os"
 )
 
@@ -33,10 +33,14 @@ func (c Handler) GetArgs(args []string) (curArgs []string, nextArgs []string) {
 }
 
 func (c Handler) Handle(args []string) {
-	var dialog []openai.ChatCompletionMessage
 	fmt.Println(`[Please enter 'quit' to exit or enter any other input to continue the conversation.]`)
+	userId := fmt.Sprintf("%d", rand.Intn(10000000))
 	if len(args) != 0 {
-		dialog = chatgpt.Chat(args[0], dialog)
+		reply, err := wenxin.GetWenXinReply(args[0], userId)
+		if err != nil {
+			fmt.Println(err)
+		}
+		fmt.Println(reply)
 	}
 	scanner := bufio.NewScanner(os.Stdin)
 	for {
@@ -46,7 +50,11 @@ func (c Handler) Handle(args []string) {
 		if text == "quit" {
 			break
 		}
-		dialog = chatgpt.Chat(text, dialog)
+		reply, err := wenxin.GetWenXinReply(text, userId)
+		if err != nil {
+			fmt.Println(err)
+		}
+		fmt.Println(reply)
 	}
 	if err := scanner.Err(); err != nil {
 		fmt.Fprintln(os.Stderr, "reading standard input:", err)

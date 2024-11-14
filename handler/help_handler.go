@@ -25,7 +25,7 @@ func (h Handler) GetArgs(args []string) (curArgs []string, nextArgs []string) {
 }
 
 func (h Handler) Handle(args []string) {
-	msg := "bot [option] args [option] args\n"
+	msg := "gtools [option] args [option] args\n"
 	for command, handler := range OptionMap {
 		msg += fmt.Sprintf("	[%v] %v\n", command, handler.GetDesc())
 	}
