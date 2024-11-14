@@ -19,7 +19,7 @@ func main() {
 	//if err := config.InitConfig(); err != nil {
 	//}
 
-	args = append([]string{"-c"}, "nihao")
+	//args = append([]string{"-c"}, "nihao")
 
 	// 执行命令
 	handler.Execute(args)
