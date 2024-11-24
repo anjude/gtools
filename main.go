@@ -15,11 +15,7 @@ func main() {
 		fmt.Println("Use -h for more information.")
 	}
 
-	// 加载配置
-	//if err := config.InitConfig(); err != nil {
-	//}
-
-	//args = append([]string{"-c"}, "nihao")
+	//args = append([]string{"-rand"}, "10", "string")
 
 	// 执行命令
 	handler.Execute(args)
