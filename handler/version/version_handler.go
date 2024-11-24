@@ -22,7 +22,7 @@ func (v Handler) GetDesc() string {
 }
 
 func (v Handler) GetArgs(args []string) (curArgs []string, nextArgs []string) {
-	return curArgs, args
+	return args, nextArgs
 }
 
 func (v Handler) Handle(strings []string) {

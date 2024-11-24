@@ -43,7 +43,9 @@ func Execute(args []string) {
 		fmt.Printf("command [%v] not found\n", args[0])
 		return
 	}
-	curArgs, _ := handler.GetArgs(args[1:])
+	curArgs, nextArgs := handler.GetArgs(args[1:])
 	handler.Handle(curArgs)
-	//Execute(nextArgs)
+	if nextArgs != nil { // 递归处理？为啥这样设计来着
+		Execute(nextArgs)
+	}
 }

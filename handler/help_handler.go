@@ -21,7 +21,7 @@ func (h Handler) GetDesc() string {
 }
 
 func (h Handler) GetArgs(args []string) (curArgs []string, nextArgs []string) {
-	return curArgs, args
+	return args, nextArgs
 }
 
 func (h Handler) Handle(args []string) {

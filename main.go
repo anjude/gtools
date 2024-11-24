@@ -15,7 +15,8 @@ func main() {
 		fmt.Println("Use -h for more information.")
 	}
 
-	//args = append([]string{"-rand"}, "10", "string")
+	//args = append([]string{"-rand"}, "20", "string")
+	args = append([]string{"-c"}, "aaa")
 
 	// 执行命令
 	handler.Execute(args)

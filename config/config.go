@@ -7,7 +7,10 @@ import (
 	"os/user"
 )
 
-var BotConf Config
+var BotConf = Config{
+	ChatGPT: ChatGPTConfig{},
+	Version: "v0.0.8",
+}
 
 type ChatGPTConfig struct {
 	ApiKey     string `mapstructure:"apiKey"`

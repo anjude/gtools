@@ -25,11 +25,7 @@ func (c Handler) GetDesc() (desc string) {
 }
 
 func (c Handler) GetArgs(args []string) (curArgs []string, nextArgs []string) {
-	if len(args) == 0 {
-		fmt.Println("no chat content")
-		return
-	}
-	return args[:1], args[1:]
+	return args, nextArgs
 }
 
 func (c Handler) Handle(args []string) {

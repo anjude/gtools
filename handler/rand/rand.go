@@ -23,7 +23,7 @@ func (s Handler) GetDesc() (desc string) {
 }
 
 func (s Handler) GetArgs(args []string) (curArgs []string, nextArgs []string) {
-	return curArgs, args
+	return args, nextArgs
 }
 
 func (s Handler) Handle(args []string) {
@@ -42,13 +42,10 @@ func (s Handler) Handle(args []string) {
 		switch args[1] {
 		case "number":
 			usedCharSet = numberCharSet
-			break
 		case "string":
 			usedCharSet = stringCharSet
-			break
 		case "all":
 			usedCharSet = allCharSet
-			break
 		}
 	}
 
