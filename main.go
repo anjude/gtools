@@ -16,7 +16,7 @@ func main() {
 	}
 
 	//args = append([]string{"-rand"}, "20", "string")
-	args = append([]string{"-c"}, "aaa")
+	//args = append([]string{"-c"}, "aaa")
 
 	// 执行命令
 	handler.Execute(args)
