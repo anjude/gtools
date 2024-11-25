@@ -9,10 +9,10 @@ xc(x command)，为你的terminal（终端）插上翅膀~
 go install github.com/anjude/xc@lastest
 
 # 执行智能对话
-xc -c "你好"
+xc chat "你好"
 
 # 查看帮助
-xc -h
+xc help
 ```
 
 ![img.png](doc/img.png)
