@@ -1,11 +1,14 @@
 /*
 Copyright © 2024 NAME HERE <EMAIL ADDRESS>
-
 */
 package cmd
 
 import (
+	"bufio"
 	"fmt"
+	"github.com/anjude/xc/third_party/wenxin"
+	"math/rand"
+	"os"
 
 	"github.com/spf13/cobra"
 )
@@ -13,15 +16,36 @@ import (
 // chatCmd represents the chat command
 var chatCmd = &cobra.Command{
 	Use:   "chat",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "在命令行工具和AI对话",
+	Long:  `在命令行工具和AI连续对话，quit退出!`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("chat called")
+		fmt.Println(`[Please enter 'quit' to exit or enter any other input to continue the conversation.]`)
+		userId := fmt.Sprintf("%d", rand.Intn(10000000))
+		if len(args) != 0 {
+			reply, err := wenxin.GetWenXinReply(args[0], userId)
+			if err != nil {
+				fmt.Println(err)
+			}
+			fmt.Println(reply)
+		}
+		scanner := bufio.NewScanner(os.Stdin)
+		for {
+			fmt.Print("\n> ")
+			scanner.Scan()
+			text := scanner.Text()
+			if text == "quit" {
+				break
+			}
+			reply, err := wenxin.GetWenXinReply(text, userId)
+			if err != nil {
+				fmt.Println(err)
+			}
+			fmt.Println(reply)
+		}
+		if err := scanner.Err(); err != nil {
+			fmt.Fprintln(os.Stderr, "reading standard input:", err)
+		}
+		fmt.Println("Goodbye!")
 	},
 }
 

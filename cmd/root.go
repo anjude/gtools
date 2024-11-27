@@ -34,13 +34,10 @@ var cfgFile string
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "xc",
-	Short: "A brief description of your application",
-	Long: `A longer description that spans multiple lines and likely contains
-examples and usage of using your application. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "xc，全程x command，一个跨平台超级命令行工具集",
+	Long: `你可以通过命令行和智能AI对话 -- xc chat
+生成随机字符串 -- xc rand 10 等等
+还可以自定义开发命令，如一行命令初始化服务器配置、安装常用插件等`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { },

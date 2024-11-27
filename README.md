@@ -12,7 +12,7 @@ go install github.com/anjude/xc@lastest
 xc chat "你好"
 
 # 查看帮助
-xc help
+xc -h
 ```
 
 ![img.png](doc/img.png)
@@ -23,7 +23,7 @@ xc help
 
 #增加命令
 go install github.com/spf13/cobra-cli@latest
-cobra-cli add -c
+cobra-cli add chat
 go run .\main.go chat
 ```
 
